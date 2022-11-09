@@ -25,7 +25,9 @@ dependencies:
   video_player: ^2.4.7  #for displaying videos...  
   fl_chart: ^0.55.2   
   smooth_page_indicator: ^1.0.0+2  
-  youtube_player_flutter: ^8.0.0   # play youtube videos
+  youtube_player_flutter: ^8.0.0 # play youtube videos
+  speech_recognition: ^0.3.0+1 
+  flutter_tts: ^0.7.0  
 
 dev_dependencies:
   flutter_test:
