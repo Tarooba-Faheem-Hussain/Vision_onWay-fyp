@@ -1,9 +1,7 @@
 //import 'dart:async';
 //import 'dart:ffi';
-// ignore_for_file: non_constant_identifier_names
-
+// ignore_for_file: non_constant_identifier_names, deprecated_member_use
 import 'package:flutter/material.dart';
-
 import 'package:sign_in/screens/home/congratulation.dart';
 //import 'package:sign_in/screens/home/fday1.dart';
 // import 'package:get/get_state_manager/src/simple/list_notifier.dart';
@@ -22,6 +20,8 @@ class Day1_Exercises extends StatefulWidget {
 // ignore: camel_case_types
 class _Day1_ExercisesState extends State<Day1_Exercises> {
   late YoutubePlayerController controller;
+
+  get isFinished => null;
 
   @override
   // ignore: must_call_super
@@ -79,44 +79,44 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
           body: ListView(
             children: [
               Player,
-              Text(
-                  '\nDay 1: \n 7 Exercises in 5 minutes duraion',
-                  style: TextStyle(
-                    height: 1.3,
-                    fontSize: 25.0,
-                    color: Colors.purple[300],
-                  )),
-              SizedBox(
-                height: 50,
-              ),
               const ExpansionTile(
                 //backgroundColor:Color.fromARGB(255, 202, 190, 204),
-                title: Text('How to contact us?'),
+                title: Text('\nDay 1: \n7 Exercises in 5 minutes duraion',
+                    style: TextStyle(
+                      height: 0.98,
+                      fontSize: 19.0,
+                    )),
                 textColor: Colors.black,
                 // subtitle: Text('Trailing expansion arrow icon'),
                 children: <Widget>[
                   ListTile(
                       title:
-                          Text('Send us email to "Visiononway22@gmail.com"')),
+                          Text('How o perform Exercises \n 1 SQUATS \n Stand with your feet shoulder width apart and your arms stretched forward, then lower your  body  until  your thighs are parallel with the floor. Your knees should be extended  in the same direction as your toes .Return to the start position and do the next rep. This works the thighs ,hips buttocks ,quads, hamstrings and lower body.')),
                 ],
               ),
-              ElevatedButton(
+              SizedBox(
+                height: 50,
+              ),
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  minimumSize: Size(10, 40),
+                  side: BorderSide(
+                    width: 2.5,
+                    color: Color.fromARGB(255, 177, 96, 191),
+                  ),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => Congratulation()),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  primary: Color.fromARGB(255, 234, 222, 222),
-                  onPrimary: Colors.purple[300],
-                  side: BorderSide(
-                      color: Color.fromARGB(255, 133, 17, 154), width: 2),
-                ),
                 child: const Text(
                   'Done!!',
                   style: TextStyle(
-                    fontSize: 34,
+                    fontSize: 22,
+                    color: Color.fromARGB(255, 61, 25, 67),
                   ),
                 ),
               )

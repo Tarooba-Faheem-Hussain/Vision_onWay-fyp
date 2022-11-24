@@ -1,9 +1,4 @@
-
-
 import 'package:flutter/material.dart';
-
-
-
 import 'package:sign_in/screens/home/lday1.dart';
 import 'package:sign_in/screens/home/lday2.dart';
 import 'package:sign_in/screens/home/lday3.dart';
@@ -11,7 +6,6 @@ import 'package:sign_in/screens/home/lday4.dart';
 import 'package:sign_in/screens/home/lday5.dart';
 import 'package:sign_in/screens/home/lday6.dart';
 import 'package:sign_in/screens/home/lday7.dart';
-
 
 class Leg extends StatelessWidget {
   const Leg({Key? key}) : super(key: key);
@@ -48,7 +42,7 @@ class Leg extends StatelessWidget {
                 Text("LEG Workout ",
                     textAlign: TextAlign.end,
                     style: TextStyle(
-                      color: Color.fromARGB(255, 22, 142, 172),
+                        color: Color.fromARGB(255, 22, 142, 172),
                         fontSize: 35,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w900)),
@@ -58,7 +52,7 @@ class Leg extends StatelessWidget {
                 Text("do daily 10-15 mints ",
                     textAlign: TextAlign.end,
                     style: TextStyle(
-                      color: Color.fromARGB(255, 22, 142, 172),
+                        color: Color.fromARGB(255, 22, 142, 172),
                         fontSize: 20,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w700)),
@@ -74,7 +68,6 @@ class Leg extends StatelessWidget {
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w100)),
                 Spacer(),
-               
                 SizedBox(
                     height: 360,
                     child: ListView(children: [
@@ -93,28 +86,22 @@ class Leg extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              height: 40,
-                              width: 43,
-                              decoration: BoxDecoration(
-                                   color: Color.fromARGB(255, 22, 142, 172), shape: BoxShape.circle),
-                              child: (IconButton(
-                icon: Icon(Icons.play_arrow),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Lday1()),
-                                );
-
-
-
-                },
-                  
-                
-              )
-)
-                            ),
+                                height: 40,
+                                width: 43,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 22, 142, 172),
+                                    shape: BoxShape.circle),
+                                child: (IconButton(
+                                  icon: Icon(Icons.play_arrow),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Lday1()),
+                                    );
+                                  },
+                                ))),
                             SizedBox(
                               width: 10,
                             ),
@@ -140,29 +127,22 @@ class Leg extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              height: 42,
-                              width: 43,
-                              decoration: BoxDecoration(
-                                   color: Color.fromARGB(255, 22, 142, 172), shape: BoxShape.circle),
-                              child: (
-                                IconButton(
-                icon: Icon(Icons.play_arrow),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>Lday2() ),
-                                );
-
-
-
-                },
-                  
-                
-              )
-                              )
-                            ),
+                                height: 42,
+                                width: 43,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 22, 142, 172),
+                                    shape: BoxShape.circle),
+                                child: (IconButton(
+                                  icon: Icon(Icons.play_arrow),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Lday2()),
+                                    );
+                                  },
+                                ))),
                             SizedBox(
                               width: 10,
                             ),
@@ -188,27 +168,22 @@ class Leg extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              height: 42,
-                              width: 43,
-                              decoration: BoxDecoration(
-                                 color: Color.fromARGB(255, 22, 142, 172), shape: BoxShape.circle),
-                              child:  IconButton(
-                icon: Icon(Icons.play_arrow),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>Lday3()),
-                                );
-
-
-
-                },
-                  
-                
-              )
-                            ),
+                                height: 42,
+                                width: 43,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 22, 142, 172),
+                                    shape: BoxShape.circle),
+                                child: IconButton(
+                                  icon: Icon(Icons.play_arrow),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Lday3()),
+                                    );
+                                  },
+                                )),
                             SizedBox(
                               width: 10,
                             ),
@@ -234,27 +209,22 @@ class Leg extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              height: 42,
-                              width: 43,
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 22, 142, 172), shape: BoxShape.circle),
-                              child:  IconButton(
-                icon: Icon(Icons.play_arrow),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>Lday4()),
-                                );
-
-
-
-                },
-                  
-                
-              )
-                            ),
+                                height: 42,
+                                width: 43,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 22, 142, 172),
+                                    shape: BoxShape.circle),
+                                child: IconButton(
+                                  icon: Icon(Icons.play_arrow),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Lday4()),
+                                    );
+                                  },
+                                )),
                             SizedBox(
                               width: 10,
                             ),
@@ -280,27 +250,22 @@ class Leg extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              height: 42,
-                              width: 43,
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 22, 142, 172), shape: BoxShape.circle),
-                              child: IconButton(
-                icon: Icon(Icons.play_arrow),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Lday5()),
-                                );
-
-
-
-                },
-                  
-                
-              )
-                            ),
+                                height: 42,
+                                width: 43,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 22, 142, 172),
+                                    shape: BoxShape.circle),
+                                child: IconButton(
+                                  icon: Icon(Icons.play_arrow),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Lday5()),
+                                    );
+                                  },
+                                )),
                             SizedBox(
                               width: 10,
                             ),
@@ -326,27 +291,22 @@ class Leg extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              height: 42,
-                              width: 43,
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 22, 142, 172), shape: BoxShape.circle),
-                              child: IconButton(
-                icon: Icon(Icons.play_arrow),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Lday6()),
-                                );
-
-
-
-                },
-                  
-                
-              )
-                            ),
+                                height: 42,
+                                width: 43,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 22, 142, 172),
+                                    shape: BoxShape.circle),
+                                child: IconButton(
+                                  icon: Icon(Icons.play_arrow),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Lday6()),
+                                    );
+                                  },
+                                )),
                             SizedBox(
                               width: 10,
                             ),
@@ -372,27 +332,22 @@ class Leg extends StatelessWidget {
                         child: Row(
                           children: <Widget>[
                             Container(
-                              height: 42,
-                              width: 43,
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 22, 142, 172), shape: BoxShape.circle),
-                              child: IconButton(
-                icon: Icon(Icons.play_arrow),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Lday7()),
-                                );
-
-
-
-                },
-                  
-                
-              )
-                            ),
+                                height: 42,
+                                width: 43,
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 22, 142, 172),
+                                    shape: BoxShape.circle),
+                                child: IconButton(
+                                  icon: Icon(Icons.play_arrow),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Lday7()),
+                                    );
+                                  },
+                                )),
                             SizedBox(
                               width: 10,
                             ),
@@ -400,11 +355,6 @@ class Leg extends StatelessWidget {
                           ],
                         ),
                       ),
-   
-                 
-                   
-                      
-                   
                     ]))
               ],
             ),

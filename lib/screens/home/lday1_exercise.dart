@@ -1,9 +1,7 @@
 //import 'dart:async';
 //import 'dart:ffi';
 // ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
-
 import 'package:sign_in/screens/home/congratulation.dart';
 //import 'package:sign_in/screens/home/fday1.dart';
 // import 'package:get/get_state_manager/src/simple/list_notifier.dart';
@@ -29,7 +27,7 @@ class _LDay1_ExercisesState extends State<LDay1_Exercises> {
     // super.initState();
 
     const url =
-        'https://www.youtube.com/watch?v=6iO3TSOC0ko&ab_channel=WatchShortFilms';
+        'https://youtu.be/C4v8vh9dyg0';
 
     controller = YoutubePlayerController(
       initialVideoId: YoutubePlayer.convertUrlToId(url)!,

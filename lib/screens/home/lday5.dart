@@ -37,7 +37,7 @@ class _WorkoutState extends State<Lday5> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Text(
-                    '10 Mins, 8 Exercises',
+                    '6 Mins, 8 Exercises',
                     style: TextStyle(
                         height: 2.7,
                         fontSize: 18,

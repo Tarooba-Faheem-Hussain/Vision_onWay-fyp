@@ -29,7 +29,7 @@ class _LDay3_ExercisesState extends State<LDay3_Exercises> {
     // super.initState();
 
     const url =
-        'https://youtu.be/PEMIhefCEM4';
+        'https://youtu.be/O7f5EMqrYWg';
 
     controller = YoutubePlayerController(
       initialVideoId: YoutubePlayer.convertUrlToId(url)!,
