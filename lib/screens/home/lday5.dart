@@ -60,7 +60,7 @@ class _WorkoutState extends State<Lday5> {
                                 alignment: Alignment.topLeft,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'Jumping jacks:',
+                                    text: 'side lying lift leg left:',
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: '\n\nDuration 00:40 \n\n',
@@ -120,7 +120,7 @@ class _WorkoutState extends State<Lday5> {
                           size: 65,
                           color: Color.fromARGB(255, 22, 142, 172),
                         ),
-                        title: Text('Jumping Jacks',
+                        title: Text('side lying lift leg left',
                             style: TextStyle(
                               fontSize: 25.0,
                               color: Color.fromARGB(255, 36, 169, 202),
@@ -146,7 +146,7 @@ class _WorkoutState extends State<Lday5> {
                                 alignment: Alignment.topLeft,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'butt kicks',
+                                    text: 'side lying lift leg right',
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: '\n\nDuration 00:40 \n\n',
@@ -206,7 +206,7 @@ class _WorkoutState extends State<Lday5> {
                           size: 65,
                           color: Color.fromARGB(255, 22, 142, 172),
                         ),
-                        title: Text('Butt Kicks',
+                        title: Text('side lying lift leg right',
                             style: TextStyle(
                               fontSize: 25.0,
                               color: Color.fromARGB(255, 36, 169, 202),
@@ -232,7 +232,7 @@ class _WorkoutState extends State<Lday5> {
                                 alignment: Alignment.topLeft,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'side lunges',
+                                    text: 'curtsy lunges',
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: '\n\nDuration 00:40 \n\n',
@@ -292,7 +292,7 @@ class _WorkoutState extends State<Lday5> {
                           size: 65,
                           color:Color.fromARGB(255, 22, 142, 172),
                         ),
-                        title: Text('Side Lunges',
+                        title: Text('curtsy lunges',
                             style: TextStyle(
                               fontSize: 25.0,
                               color:Color.fromARGB(255, 36, 169, 202),
@@ -318,7 +318,7 @@ class _WorkoutState extends State<Lday5> {
                                 alignment: Alignment.topLeft,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'donkey kick left',
+                                    text: 'backward lunges',
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: '\n\nDuration 00:40 \n\n',
@@ -378,7 +378,7 @@ class _WorkoutState extends State<Lday5> {
                           size: 65,
                           color: Color.fromARGB(255, 22, 142, 172),
                         ),
-                        title: Text('Donkey Kick Left',
+                        title: Text('backward lunges',
                             style: TextStyle(
                               fontSize: 25.0,
                               color: Color.fromARGB(255, 36, 169, 202)
@@ -404,7 +404,7 @@ class _WorkoutState extends State<Lday5> {
                                 alignment: Alignment.topLeft,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'Donkey kicks right ',
+                                    text: 'left quad stretch with wall:',
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: '\n\nDuration 00:40 \n\n',
@@ -464,7 +464,7 @@ class _WorkoutState extends State<Lday5> {
                           size: 65,
                           color: Color.fromARGB(255, 22, 142, 172),
                         ),
-                        title: Text('Donkey Kicks Right ',
+                        title: Text('left quad stretch with wall ',
                             style: TextStyle(
                               fontSize: 25.0,
                               color: Color.fromARGB(255, 36, 169, 202),
@@ -490,7 +490,7 @@ class _WorkoutState extends State<Lday5> {
                                 alignment: Alignment.topLeft,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'Curtsy lunges',
+                                    text: 'right quad stretch with wall:',
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: '\n\nDuration 00:40 \n\n',
@@ -551,7 +551,7 @@ class _WorkoutState extends State<Lday5> {
                           size: 65,
                           color: Color.fromARGB(255, 22, 142, 172),
                         ),
-                        title: Text('Curtsy lunges',
+                        title: Text('right quad stretch with wall:',
                             style: TextStyle(
                               fontSize: 25.0,
                               color: Color.fromARGB(255, 36, 169, 202),
@@ -577,7 +577,7 @@ class _WorkoutState extends State<Lday5> {
                                 alignment: Alignment.topLeft,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'bottom leg lift left',
+                                    text: 'knee to chest stretch left: ',
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: '\n\nDuration 00:40 \n\n',
@@ -638,7 +638,7 @@ class _WorkoutState extends State<Lday5> {
                           size: 65,
                           color: Color.fromARGB(255, 22, 142, 172),
                         ),
-                        title: Text('Bottom Leg Lift Left',
+                        title: Text('knee to chest stretch left ',
                             style: TextStyle(
                               fontSize: 25.0,
                               color: Color.fromARGB(255, 36, 169, 202),
@@ -664,7 +664,7 @@ class _WorkoutState extends State<Lday5> {
                                 alignment: Alignment.topLeft,
                                 child: Text.rich(
                                   TextSpan(
-                                    text: 'Bottom leg lift right',
+                                    text: 'knee to chest stretch right:',
                                     children: <TextSpan>[
                                       TextSpan(
                                         text: '\n\nDuration 00:40 \n\n',
@@ -724,7 +724,7 @@ class _WorkoutState extends State<Lday5> {
                           size: 65,
                           color: Color.fromARGB(255, 22, 142, 172),
                         ),
-                        title: Text('Bottom Leg Lift Right',
+                        title: Text('knee to chest stretch right',
                             style: TextStyle(
                               fontSize: 25.0,
                               color: Color.fromARGB(255, 36, 169, 202),

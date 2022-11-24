@@ -62,7 +62,7 @@ class _Day4_ExercisesState extends State<Day4_Exercises> {
         builder: (Context, Player) => Scaffold(
           appBar: AppBar(
             title: Text(
-              'Day 1',
+              'Day 4',
               style: TextStyle(
                   fontSize: 21, color: Color.fromARGB(255, 255, 255, 255)),
             ),
@@ -78,38 +78,49 @@ class _Day4_ExercisesState extends State<Day4_Exercises> {
           ),
           
           body: ListView(
-            children: [
+           children: [
               Player,
-              Text('\nDay 3: \n 7 Exercises in 5 minutes duraion',
-                  style: TextStyle(
-                    height: 1.3,
-                    fontSize: 25.0,
-                    color: Colors.purple[300],
-                  )),
+              const ExpansionTile(
+                //backgroundColor:Color.fromARGB(255, 202, 190, 204),
+                title: Text('\nDay 4: \n7 Exercises in 5 minutes duration',
+                    style: TextStyle(
+                      height: 0.98,
+                      fontSize: 19.0,
+                    )),
+                textColor: Colors.black,
+                // subtitle: Text('Trailing expansion arrow icon'),
+                children: <Widget>[
+                  ListTile(
+                      title:
+                          Text(' \nI hope you have learned how to perform each exercise from the cards right on the previous page. \n\nif not, then go back & tab on any exercise to find out the way to perform exercises easily. \n')),
+                ],
+              ),
               SizedBox(
                 height: 50,
-                
               ),
-              
-ElevatedButton(
-  onPressed: () {
-    Navigator.push(
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  minimumSize: Size(10, 40),
+                  side: BorderSide(
+                    width: 2.5,
+                    color: Color.fromARGB(255, 177, 96, 191),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>Congratulation() ),
+                    MaterialPageRoute(builder: (context) => Congratulation()),
                   );
-  },  
-  style: ElevatedButton.styleFrom(
-    
-    primary: Color.fromARGB(255, 234, 222, 222),
-    onPrimary: Colors.purple[300],
-    side: BorderSide(color: Color.fromARGB(255, 133, 17, 154), width: 2),
-  ),
-  child: const Text(
-    'Done!!',
-    style: TextStyle(fontSize: 34,    
-    ),
-  ),
-)
+                },
+                child: const Text(
+                  'Done!!',
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: Color.fromARGB(255, 61, 25, 67),
+                  ),
+                ),
+              )
             ],
           ),
         ),

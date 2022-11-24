@@ -81,7 +81,7 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
               Player,
               const ExpansionTile(
                 //backgroundColor:Color.fromARGB(255, 202, 190, 204),
-                title: Text('\nDay 1: \n7 Exercises in 5 minutes duraion',
+                title: Text('\nDay 1: \n7 Exercises in 5 minutes duration',
                     style: TextStyle(
                       height: 0.98,
                       fontSize: 19.0,
@@ -91,7 +91,7 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
                 children: <Widget>[
                   ListTile(
                       title:
-                          Text('How o perform Exercises \n 1 SQUATS \n Stand with your feet shoulder width apart and your arms stretched forward, then lower your  body  until  your thighs are parallel with the floor. Your knees should be extended  in the same direction as your toes .Return to the start position and do the next rep. This works the thighs ,hips buttocks ,quads, hamstrings and lower body.')),
+                          Text(' \nI hope you have learned how to perform each exercise from the cards right on the previous page. \n\nif not, then go back & tab on any exercise to find out the way to perform exercises easily. \n')),
                 ],
               ),
               SizedBox(

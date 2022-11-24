@@ -1,9 +1,7 @@
 //import 'dart:async';
 //import 'dart:ffi';
 // ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
-
 import 'package:sign_in/screens/home/congratulation.dart';
 //import 'package:sign_in/screens/home/fday1.dart';
 // import 'package:get/get_state_manager/src/simple/list_notifier.dart';
@@ -28,8 +26,7 @@ class _LDay7_ExercisesState extends State<LDay7_Exercises> {
   void initState() {
     // super.initState();
 
-    const url =
-        'https://youtu.be/C4E66E26lQE';
+    const url = 'https://youtu.be/C4E66E26lQE';
 
     controller = YoutubePlayerController(
       initialVideoId: YoutubePlayer.convertUrlToId(url)!,
@@ -80,33 +77,42 @@ class _LDay7_ExercisesState extends State<LDay7_Exercises> {
           body: ListView(
             children: [
               Player,
-              Text(
-                  ' Monkaa\n - Animation Cartoon ...............\n .................................',
-                  style: TextStyle(
-                    height: 1.3,
-                    fontSize: 25.0,
-                    color: Color.fromARGB(255, 36, 169, 202),
-                  )),
+              const ExpansionTile(
+                title: Text('\nDay 7: \n8 Exercises in 6 minutes duration',
+                    style: TextStyle(
+                      height: 0.98,
+                      fontSize: 19.0,
+                    )),
+                textColor: Colors.black,
+                children: <Widget>[
+                  ListTile(
+                      title: Text(
+                          ' \nI hope you have learned how to perform each exercise from the cards right on the previous page. \n\nif not, then go back & tab on any exercise to find out the way to perform exercises easily. \n')),
+                ],
+              ),
               SizedBox(
                 height: 50,
               ),
-              ElevatedButton(
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  minimumSize: Size(10, 40),
+                  side: BorderSide(
+                    width: 2.5,
+                    color: Color.fromARGB(255, 177, 96, 191),
+                  ),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>Congratulation() ),
+                    MaterialPageRoute(builder: (context) => Congratulation()),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  primary:  Color.fromARGB(212, 215, 255, 255),
-                  onPrimary: Color.fromARGB(255, 36, 169, 202),
-                  side: BorderSide(
-                      color: Color.fromARGB(255, 22, 142, 172), width: 2),
-                ),
                 child: const Text(
                   'Done!!',
                   style: TextStyle(
-                    fontSize: 34,
+                    fontSize: 22,
+                    color: Color.fromARGB(255, 61, 25, 67),
                   ),
                 ),
               )
