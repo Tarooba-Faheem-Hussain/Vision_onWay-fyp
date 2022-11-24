@@ -81,7 +81,7 @@ class _Day2_ExercisesState extends State<Day2_Exercises> {
             children: [
              
               Player,
-              Text('\nDay 1: \n 7 Exercises in 5 minutes duraion',
+              Text('\nDay 2: \n 7 Exercises in 5 minutes duraion',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     height: 1.3,

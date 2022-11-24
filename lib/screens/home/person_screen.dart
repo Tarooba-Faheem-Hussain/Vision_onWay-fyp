@@ -12,11 +12,9 @@ import 'package:sign_in/screens/home/workout.dart';
 import 'package:sign_in/screens/home/BMI_Calculator.dart';
 import 'package:sign_in/widgets/rounded_elevated_button.dart';
 import '../../widgets/button_widget.dart';
-// ignore: import_of_legacy_library_into_null_safe
-import 'package:flutter_tts/flutter_tts.dart';
+//import 'package:flutter_tts/flutter_tts.dart';
 
 class Person extends StatelessWidget {
-
   //FlutterTts flutterTts = flutterTts();
   const Person({Key? key}) : super(key: key);
   @override

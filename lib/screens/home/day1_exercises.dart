@@ -28,8 +28,7 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
   void initState() {
     // super.initState();
 
-    const url =
-        'https://youtu.be/qcVlGnq5B4Y';
+    const url = 'https://youtu.be/qcVlGnq5B4Y';
 
     controller = YoutubePlayerController(
       initialVideoId: YoutubePlayer.convertUrlToId(url)!,
@@ -81,7 +80,7 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
             children: [
               Player,
               Text(
-                  ' Monkaa\n - Animation Cartoon ...............\n .................................',
+                  '\nDay 1: \n 7 Exercises in 5 minutes duraion',
                   style: TextStyle(
                     height: 1.3,
                     fontSize: 25.0,
@@ -90,11 +89,22 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
               SizedBox(
                 height: 50,
               ),
+              const ExpansionTile(
+                //backgroundColor:Color.fromARGB(255, 202, 190, 204),
+                title: Text('How to contact us?'),
+                textColor: Colors.black,
+                // subtitle: Text('Trailing expansion arrow icon'),
+                children: <Widget>[
+                  ListTile(
+                      title:
+                          Text('Send us email to "Visiononway22@gmail.com"')),
+                ],
+              ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) =>Congratulation() ),
+                    MaterialPageRoute(builder: (context) => Congratulation()),
                   );
                 },
                 style: ElevatedButton.styleFrom(

@@ -80,7 +80,7 @@ class _Day5_ExercisesState extends State<Day5_Exercises> {
           body: ListView(
             children: [
               Player,
-              Text(' Monkaa\n - Animation Cartoon ...............\n .................................',
+              Text('\nDay 3: \n 7 Exercises in 5 minutes duraion',
                   style: TextStyle(
                     height: 1.3,
                     fontSize: 25.0,
