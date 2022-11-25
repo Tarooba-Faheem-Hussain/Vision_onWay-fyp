@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'day3_exercises.dart';
+import 'day6_exercises.dart';
 
 class Fday6 extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _WorkoutState extends State<Fday6> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Day 3',
+            'Day 6: List of Exercises',
             style: TextStyle(
                 fontSize: 21, color: Color.fromARGB(255, 255, 255, 255)),
           ),
@@ -562,7 +562,7 @@ class _WorkoutState extends State<Fday6> {
                       ),
                     ),
                   ),
-                    InkWell(
+                  InkWell(
                     splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
@@ -648,26 +648,27 @@ class _WorkoutState extends State<Fday6> {
                       ),
                     ),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 234, 222, 222),
-                      onPrimary: Colors.purple[300],
-                      // foregroundColor: Colors.purple[300],
-                      // backgroundColor: Color.fromARGB(255, 234, 222, 222),
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: StadiumBorder(),
                       side: BorderSide(
-                          color: Color.fromARGB(255, 133, 17, 154), width: 2),
+                        width: 2.5,
+                        color: Color.fromARGB(255, 177, 96, 191),
+                      ),
                     ),
                     child: const Text(
-                      'Start',
+                      '            Start           ',
                       style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 22,
+                        wordSpacing: 4,
+                        color: Color.fromARGB(255, 61, 25, 67),
                       ),
                     ),
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Day3_Exercises()));
+                              builder: (context) => Day6_Exercises()));
                     },
                   ),
                 ],

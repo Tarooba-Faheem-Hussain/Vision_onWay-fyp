@@ -1,6 +1,4 @@
-//import 'dart:ui';
 import 'package:flutter/material.dart';
-//import 'package:flutter/material.dart';
 import '../../widgets/weekly_chart.dart';
 
 // ignore: camel_case_types

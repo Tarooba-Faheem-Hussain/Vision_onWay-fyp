@@ -14,7 +14,7 @@ class _WorkoutState extends State<Fday1> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Day 1',
+            'Day 1: List of Exercises',
             style: TextStyle(
                 fontSize: 21, color: Color.fromARGB(255, 255, 255, 255)),
           ),
@@ -74,7 +74,7 @@ class _WorkoutState extends State<Fday1> {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: <Widget>[                                  
+                                children: <Widget>[
                                   OutlinedButton(
                                     style: OutlinedButton.styleFrom(
                                       shape: StadiumBorder(),
@@ -90,7 +90,7 @@ class _WorkoutState extends State<Fday1> {
                                     },
                                     child: const Text(
                                       'Close',
-                                      style: TextStyle(                                       
+                                      style: TextStyle(
                                         color: Color.fromARGB(255, 61, 25, 67),
                                       ),
                                     ),
@@ -142,12 +142,11 @@ class _WorkoutState extends State<Fday1> {
                                 child: Text.rich(
                                   TextSpan(
                                     text: 'Wall Push-ups\n\n',
-                                   style: TextStyle(
+                                    style: TextStyle(
                                       fontSize: 16.5,
                                       color: Color.fromARGB(255, 61, 25, 67),
                                     ),
                                     children: <TextSpan>[
-                                     
                                       TextSpan(
                                           text:
                                               'Stand in front of a wall one big step away from it. Then put your hands out straight towards  the wall and lean against it. Lift your heels. Slowly bend your elbows and press  your  upper body towards the wall. Push back and repeat the exercise .remember to keep your body straight.'),
@@ -159,7 +158,7 @@ class _WorkoutState extends State<Fday1> {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: <Widget>[                                  
+                                children: <Widget>[
                                   OutlinedButton(
                                     style: OutlinedButton.styleFrom(
                                       shape: StadiumBorder(),
@@ -175,7 +174,7 @@ class _WorkoutState extends State<Fday1> {
                                     },
                                     child: const Text(
                                       'Close',
-                                      style: TextStyle(                                        
+                                      style: TextStyle(
                                         color: Color.fromARGB(255, 61, 25, 67),
                                       ),
                                     ),
@@ -232,7 +231,6 @@ class _WorkoutState extends State<Fday1> {
                                       color: Color.fromARGB(255, 61, 25, 67),
                                     ),
                                     children: <TextSpan>[
-                                     
                                       TextSpan(
                                           text:
                                               'Lie down on your side with your head rested on your right arm. lift your upper leg  up and return to the start position. Make sure your left leg goes straight up and down during the exercise .It’s  a great exercise for the gluteus'),
@@ -244,7 +242,7 @@ class _WorkoutState extends State<Fday1> {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: <Widget>[                                  
+                                children: <Widget>[
                                   OutlinedButton(
                                     style: OutlinedButton.styleFrom(
                                       shape: StadiumBorder(),
@@ -260,7 +258,7 @@ class _WorkoutState extends State<Fday1> {
                                     },
                                     child: const Text(
                                       'Close',
-                                      style: TextStyle(                                        
+                                      style: TextStyle(
                                         color: Color.fromARGB(255, 61, 25, 67),
                                       ),
                                     ),
@@ -317,7 +315,6 @@ class _WorkoutState extends State<Fday1> {
                                       color: Color.fromARGB(255, 61, 25, 67),
                                     ),
                                     children: <TextSpan>[
-                                      
                                       TextSpan(
                                           text:
                                               'Lie down on your side with your head rested on your  left  arm. lift your upper leg  up and return to the start position. Make sure your right  leg  goes straight up and down during the exercise.It’s  a great exercise for the gluteus '),
@@ -329,7 +326,7 @@ class _WorkoutState extends State<Fday1> {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[                                  
+                                children: <Widget>[
                                   OutlinedButton(
                                     style: OutlinedButton.styleFrom(
                                       shape: StadiumBorder(),
@@ -345,7 +342,7 @@ class _WorkoutState extends State<Fday1> {
                                     },
                                     child: const Text(
                                       'Close',
-                                      style: TextStyle(                                        
+                                      style: TextStyle(
                                         color: Color.fromARGB(255, 61, 25, 67),
                                       ),
                                     ),
@@ -402,7 +399,6 @@ class _WorkoutState extends State<Fday1> {
                                       color: Color.fromARGB(255, 61, 25, 67),
                                     ),
                                     children: <TextSpan>[
-                                      
                                       TextSpan(
                                           text:
                                               'Lie on your back with knees bent and feet flat on the floor .put your arms flat at your sides  then lift your butt up and down.'),
@@ -414,7 +410,7 @@ class _WorkoutState extends State<Fday1> {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[                                  
+                                children: <Widget>[
                                   OutlinedButton(
                                     style: OutlinedButton.styleFrom(
                                       shape: StadiumBorder(),
@@ -430,7 +426,7 @@ class _WorkoutState extends State<Fday1> {
                                     },
                                     child: const Text(
                                       'Close',
-                                      style: TextStyle(                                        
+                                      style: TextStyle(
                                         color: Color.fromARGB(255, 61, 25, 67),
                                       ),
                                     ),
@@ -487,7 +483,6 @@ class _WorkoutState extends State<Fday1> {
                                       color: Color.fromARGB(255, 61, 25, 67),
                                     ),
                                     children: <TextSpan>[
-                                      
                                       TextSpan(
                                           text:
                                               'Stand with your feet shoulder width apart . raise your arm and clap over your head.'),
@@ -499,7 +494,7 @@ class _WorkoutState extends State<Fday1> {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[                                  
+                                children: <Widget>[
                                   OutlinedButton(
                                     style: OutlinedButton.styleFrom(
                                       shape: StadiumBorder(),
@@ -515,7 +510,7 @@ class _WorkoutState extends State<Fday1> {
                                     },
                                     child: const Text(
                                       'Close',
-                                      style: TextStyle(                                        
+                                      style: TextStyle(
                                         color: Color.fromARGB(255, 61, 25, 67),
                                       ),
                                     ),
@@ -572,7 +567,6 @@ class _WorkoutState extends State<Fday1> {
                                       color: Color.fromARGB(255, 61, 25, 67),
                                     ),
                                     children: <TextSpan>[
-                                     
                                       TextSpan(
                                           text:
                                               'Lies on the floor with your toes and forearms on the ground .keep your body straight and hold this position as long as you can. This exercise strengthens the abdomen, back, and shoulders.'),
@@ -584,7 +578,7 @@ class _WorkoutState extends State<Fday1> {
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                  children: <Widget>[                                  
+                                children: <Widget>[
                                   OutlinedButton(
                                     style: OutlinedButton.styleFrom(
                                       shape: StadiumBorder(),
@@ -600,7 +594,7 @@ class _WorkoutState extends State<Fday1> {
                                     },
                                     child: const Text(
                                       'Close',
-                                      style: TextStyle(                                        
+                                      style: TextStyle(
                                         color: Color.fromARGB(255, 61, 25, 67),
                                       ),
                                     ),
@@ -638,19 +632,20 @@ class _WorkoutState extends State<Fday1> {
                       ),
                     ),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 234, 222, 222),
-                      onPrimary: Colors.purple[300],
-                      // foregroundColor: Colors.purple[300],
-                      // backgroundColor: Color.fromARGB(255, 234, 222, 222),
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: StadiumBorder(),
                       side: BorderSide(
-                          color: Color.fromARGB(255, 133, 17, 154), width: 2),
+                        width: 2.5,
+                        color: Color.fromARGB(255, 177, 96, 191),
+                      ),
                     ),
                     child: const Text(
-                      'Start',
+                      '            Start           ',
                       style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 22,
+                        wordSpacing: 4,
+                        color: Color.fromARGB(255, 61, 25, 67),
                       ),
                     ),
                     onPressed: () {

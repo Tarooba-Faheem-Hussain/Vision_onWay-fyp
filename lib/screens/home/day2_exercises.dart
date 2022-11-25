@@ -1,13 +1,5 @@
-//import 'dart:async';
-//import 'dart:ffi';
-// ignore_for_file: non_constant_identifier_names, deprecated_member_use
 import 'package:flutter/material.dart';
-//import 'package:sign_in/screens/home/congratulation.dart';
-// import 'package:get/get_state_manager/src/simple/list_notifier.dart';
-// import 'package:sign_in/controllerBindings.dart';
-//import 'package:video_player/video_player.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-
 import 'congratulation.dart';
 
 // ignore: camel_case_types
@@ -78,7 +70,7 @@ class _Day2_ExercisesState extends State<Day2_Exercises> {
             ),
           ),
           body: ListView(
-           children: [
+            children: [
               Player,
               const ExpansionTile(
                 //backgroundColor:Color.fromARGB(255, 202, 190, 204),
@@ -91,8 +83,8 @@ class _Day2_ExercisesState extends State<Day2_Exercises> {
                 // subtitle: Text('Trailing expansion arrow icon'),
                 children: <Widget>[
                   ListTile(
-                      title:
-                          Text(' \nI hope you have learned how to perform each exercise from the cards right on the previous page. \n\nif not, then go back & tab on any exercise to find out the way to perform exercises easily. \n')),
+                      title: Text(
+                          ' \nI hope you have learned how to perform each exercise from the cards right on the previous page. \n\nif not, then go back & tab on any exercise to find out the way to perform exercises easily. \n')),
                 ],
               ),
               SizedBox(

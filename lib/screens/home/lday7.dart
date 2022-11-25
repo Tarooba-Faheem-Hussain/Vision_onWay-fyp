@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in/screens/home/lday7_exercise.dart';
-//import 'day1_exercises.dart';
 
 class Lday7 extends StatefulWidget {
   @override
@@ -15,7 +14,7 @@ class _WorkoutState extends State<Lday7> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Day 7',
+            'Day 7: List of Exercises',
             style: TextStyle(
                 fontSize: 21, color: Color.fromARGB(255, 255, 255, 255)),
           ),
@@ -304,7 +303,6 @@ class _WorkoutState extends State<Lday7> {
                       ),
                     ),
                   ),
-                  
                   InkWell(
                     //   splashColor: Colors.purple[200],
                     onTap: () {
@@ -651,7 +649,7 @@ class _WorkoutState extends State<Lday7> {
                       ),
                     ),
                   ),
-                   InkWell(
+                  InkWell(
                     //  splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
@@ -738,19 +736,20 @@ class _WorkoutState extends State<Lday7> {
                       ),
                     ),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(212, 215, 255, 255),
-                      onPrimary: Color.fromARGB(255, 36, 169, 202),
-                      // foregroundColor: Colors.purple[300],
-                      // backgroundColor: Color.fromARGB(255, 234, 222, 222),
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: StadiumBorder(),
                       side: BorderSide(
-                          color: Color.fromARGB(255, 22, 142, 172), width: 2),
+                        width: 2.5,
+                        color: Color.fromARGB(255, 22, 142, 172),
+                      ),
                     ),
                     child: const Text(
-                      'Start',
+                      '            Start           ',
                       style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 22,
+                        wordSpacing: 4,
+                        color: Color.fromARGB(255, 6, 58, 70),
                       ),
                     ),
                     onPressed: () {

@@ -1,12 +1,5 @@
-//import 'dart:async';
-//import 'dart:ffi';
-// ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
 import 'package:sign_in/screens/home/congratulation.dart';
-//import 'package:sign_in/screens/home/fday1.dart';
-// import 'package:get/get_state_manager/src/simple/list_notifier.dart';
-// import 'package:sign_in/controllerBindings.dart';
-//import 'package:video_player/video_player.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 // ignore: camel_case_types
@@ -99,7 +92,7 @@ class _LDay7_ExercisesState extends State<LDay7_Exercises> {
                   minimumSize: Size(10, 40),
                   side: BorderSide(
                     width: 2.5,
-                    color: Color.fromARGB(255, 177, 96, 191),
+                    color: Color.fromARGB(255, 22, 142, 172),
                   ),
                 ),
                 onPressed: () {
@@ -112,7 +105,7 @@ class _LDay7_ExercisesState extends State<LDay7_Exercises> {
                   'Done!!',
                   style: TextStyle(
                     fontSize: 22,
-                    color: Color.fromARGB(255, 61, 25, 67),
+                      color: Color.fromARGB(255, 6, 58, 70),
                   ),
                 ),
               )

@@ -27,7 +27,7 @@ class Person extends StatelessWidget {
               color: Color.fromARGB(255, 167, 124, 175),
             ),
           ),
-          elevation: 1.0,
+          elevation: 0,
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           iconTheme: IconThemeData(
             color: Color.fromARGB(255, 167, 124, 175),

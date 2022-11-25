@@ -1,11 +1,7 @@
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
-//import 'package:sign_in/screens/home/abs.dart';
 import 'package:sign_in/screens/home/body_screen.dart';
 import 'package:sign_in/screens/home/leg_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-//import 'package:video_player/video_player.dart';
 
 class Workout extends StatefulWidget {
   const Workout({Key? key}) : super(key: key);
@@ -16,10 +12,10 @@ class Workout extends StatefulWidget {
 
 class _WorkoutState extends State<Workout> {
   PageController _pageController = new PageController(
-        initialPage: 0,
+    initialPage: 0,
   );
   @override
-    void dispose() {
+  void dispose() {
     _pageController.dispose();
     super.dispose();
   }
@@ -32,30 +28,29 @@ class _WorkoutState extends State<Workout> {
           children: [
             Body(),
             Leg(),
-           // Abs(),
+            // Abs(),
           ],
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          
           children: [
             Container(
               padding: const EdgeInsets.all(10),
-              child: Center(child: SmoothPageIndicator(
+              child: Center(
+                  child: SmoothPageIndicator(
                 controller: _pageController,
                 count: 2,
                 effect: WormEffect(
                   activeDotColor: Color.fromARGB(255, 234, 194, 241),
                   dotColor: Color.fromARGB(255, 230, 226, 238),
-                 // spacing: 10,
+                  // spacing: 10,
                   dotHeight: 12,
                   dotWidth: 12,
                 ),
-                
-                onDotClicked:(index) => _pageController.animateToPage(index, 
-                duration: Duration(milliseconds: 500), 
-                curve: Curves.easeInCubic),
+                onDotClicked: (index) => _pageController.animateToPage(index,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInCubic),
               )),
             )
           ],
@@ -64,6 +59,3 @@ class _WorkoutState extends State<Workout> {
     );
   }
 }
-
-
-

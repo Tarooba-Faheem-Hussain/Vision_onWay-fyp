@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sign_in/screens/home/lday4_exercises.dart';
-//import 'day1_exercises.dart';
 
 class Lday4 extends StatefulWidget {
   @override
@@ -15,12 +14,12 @@ class _WorkoutState extends State<Lday4> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Day 4',
+            'Day 4: List of Exercises',
             style: TextStyle(
                 fontSize: 21, color: Color.fromARGB(255, 255, 255, 255)),
           ),
           elevation: 6.0,
-          backgroundColor:Color.fromARGB(255, 22, 142, 172) ,
+          backgroundColor: Color.fromARGB(255, 22, 142, 172),
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
@@ -47,9 +46,8 @@ class _WorkoutState extends State<Lday4> {
                     height: 1,
                     width: 100.0,
                   ),
-                 
                   InkWell(
-                  // splashColor: Colors.purple[200],
+                    // splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
                         context: context,
@@ -123,9 +121,8 @@ class _WorkoutState extends State<Lday4> {
                         ),
                         title: Text('Side Lunges',
                             style: TextStyle(
-                              fontSize: 25.0,
-                              color: Color.fromARGB(255, 36, 169, 202)
-                            )),
+                                fontSize: 25.0,
+                                color: Color.fromARGB(255, 36, 169, 202))),
                         subtitle: Text('40 seconds',
                             style: TextStyle(
                               fontSize: 18.0,
@@ -135,7 +132,7 @@ class _WorkoutState extends State<Lday4> {
                     ),
                   ),
                   InkWell(
-                   // splashColor: Colors.purple[200],
+                    // splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
                         context: context,
@@ -221,7 +218,7 @@ class _WorkoutState extends State<Lday4> {
                     ),
                   ),
                   InkWell(
-                  //  splashColor: Colors.purple[200],
+                    //  splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
                         context: context,
@@ -280,7 +277,7 @@ class _WorkoutState extends State<Lday4> {
                         },
                       );
                     },
-                    
+
                     child: Card(
                       color: Color.fromARGB(212, 215, 255, 255),
                       margin: EdgeInsets.symmetric(
@@ -307,8 +304,8 @@ class _WorkoutState extends State<Lday4> {
                       ),
                     ),
                   ),
-                    InkWell(
-                 //   splashColor: Colors.purple[200],
+                  InkWell(
+                    //   splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
                         context: context,
@@ -367,9 +364,9 @@ class _WorkoutState extends State<Lday4> {
                         },
                       );
                     },
-                    
+
                     child: Card(
-                      color:Color.fromARGB(212, 215, 255, 255),
+                      color: Color.fromARGB(212, 215, 255, 255),
                       margin: EdgeInsets.symmetric(
                         vertical: 10.0,
                         horizontal: 15.0,
@@ -389,13 +386,13 @@ class _WorkoutState extends State<Lday4> {
                         subtitle: Text('40 seconds',
                             style: TextStyle(
                               fontSize: 18.0,
-                              color:Color.fromARGB(255, 36, 169, 202),
+                              color: Color.fromARGB(255, 36, 169, 202),
                             )),
                       ),
                     ),
                   ),
                   InkWell(
-                   // splashColor: Colors.purple[200],
+                    // splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
                         context: context,
@@ -481,7 +478,7 @@ class _WorkoutState extends State<Lday4> {
                     ),
                   ),
                   InkWell(
-                  //  splashColor: Colors.purple[200],
+                    //  splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
                         context: context,
@@ -540,7 +537,7 @@ class _WorkoutState extends State<Lday4> {
                         },
                       );
                     },
-                    
+
                     child: Card(
                       color: Color.fromARGB(212, 215, 255, 255),
                       margin: EdgeInsets.symmetric(
@@ -567,8 +564,8 @@ class _WorkoutState extends State<Lday4> {
                       ),
                     ),
                   ),
-                    InkWell(
-                 //   splashColor: Colors.purple[200],
+                  InkWell(
+                    //   splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
                         context: context,
@@ -627,9 +624,9 @@ class _WorkoutState extends State<Lday4> {
                         },
                       );
                     },
-                    
+
                     child: Card(
-                      color:Color.fromARGB(212, 215, 255, 255),
+                      color: Color.fromARGB(212, 215, 255, 255),
                       margin: EdgeInsets.symmetric(
                         vertical: 10.0,
                         horizontal: 15.0,
@@ -649,11 +646,12 @@ class _WorkoutState extends State<Lday4> {
                         subtitle: Text('40 seconds',
                             style: TextStyle(
                               fontSize: 18.0,
-                              color:Color.fromARGB(255, 36, 169, 202),
+                              color: Color.fromARGB(255, 36, 169, 202),
                             )),
                       ),
-                    ),),
-                    InkWell(
+                    ),
+                  ),
+                  InkWell(
                     splashColor: Colors.purple[200],
                     onTap: () {
                       showDialog(
@@ -739,22 +737,20 @@ class _WorkoutState extends State<Lday4> {
                       ),
                     ),
                   ),
-                     
-                  
-                  
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(212, 215, 255, 255),
-                      onPrimary: Color.fromARGB(255, 36, 169, 202),
-                      // foregroundColor: Colors.purple[300],
-                      // backgroundColor: Color.fromARGB(255, 234, 222, 222),
+                  OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      shape: StadiumBorder(),
                       side: BorderSide(
-                          color: Color.fromARGB(255, 22, 142, 172), width: 2),
+                        width: 2.5,
+                        color: Color.fromARGB(255, 22, 142, 172),
+                      ),
                     ),
                     child: const Text(
-                      'Start',
+                      '            Start           ',
                       style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 22,
+                        wordSpacing: 4,
+                        color: Color.fromARGB(255, 6, 58, 70),
                       ),
                     ),
                     onPressed: () {
