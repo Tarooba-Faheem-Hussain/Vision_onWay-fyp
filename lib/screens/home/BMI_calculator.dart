@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use, unnecessary_statements
 
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,6 +32,12 @@ class _BmiCalculatorState extends State<BmiCalculator> {
   // declare the inputcontrollor to get the input value
   TextEditingController heightController = TextEditingController();
   TextEditingController weightController = TextEditingController();
+  TextEditingController postController = TextEditingController();
+
+  //final postController = TextEditingController();
+  bool loading = false;
+  // ignore: non_constant_identifier_names
+  final DatabaseReference = FirebaseDatabase.instance.ref('BMI');
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,8 +45,8 @@ class _BmiCalculatorState extends State<BmiCalculator> {
         // We create a simple app bar
         appBar: AppBar(
           title: Text(
-            "CALCULATE BMI ",
-            style: TextStyle(color: Color.fromARGB(255, 97, 66, 181)),
+            " BMI  CALCULATOR",
+            style: TextStyle(color: Color.fromARGB(255, 108, 64, 228)),
           ),
           elevation: 3.0,
           backgroundColor: Colors.purple[100],
@@ -71,7 +78,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
               children: [
                 Row(
                   children: [
-                    radioButton("Man", Color.fromARGB(255, 1, 82, 147), 0),
+                    radioButton("Man", Color.fromARGB(255, 100, 134, 161), 0),
                     radioButton("Woman", Colors.pink, 1),
                   ],
                 ),
@@ -88,9 +95,9 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                 SizedBox(
                   height: 8.0,
                 ),
-                TextField(
+                TextFormField(
+                  // controller: postController,
                   keyboardType: TextInputType.number,
-                  //add controllors
                   controller: heightController,
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
@@ -102,6 +109,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                       borderSide: BorderSide.none,
                     ),
                   ),
+                  //   controller: postController,
                 ),
 
                 SizedBox(
@@ -120,7 +128,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                 SizedBox(
                   height: 8.0,
                 ),
-                TextField(
+                TextFormField(
                   keyboardType: TextInputType.number,
                   controller: weightController,
                   textAlign: TextAlign.center,
@@ -143,6 +151,14 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                   height: 50.0,
                   child: TextButton(
                     onPressed: () {
+                      DatabaseReference.child(DateTime.now().millisecondsSinceEpoch.toString()).set({
+                         //'bmi is ':postController.value.toString(),
+                        'height': heightController.value.text,
+                        'weight': weightController.value.text,
+                       
+                        
+                      }).then((value) {});
+
                       //style:
                       TextButton.styleFrom(
                         backgroundColor: Colors.deepPurpleAccent,
@@ -150,6 +166,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                       setState(() {
                         height = double.parse(heightController.value.text);
                         weight = double.parse(heightController.value.text);
+                        
                       });
 
                       calculteBmi(height, weight);
@@ -159,7 +176,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                     child: Text(
                       "Calculate",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 12, 11, 11),
                       ),
                     ),
                   ),
@@ -171,10 +188,13 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                   width: double.infinity,
                   child: Text(
                     "Your BMI is:",
+                    
+                    
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
+                      
                     ),
                   ),
                 ),
@@ -225,6 +245,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
         height: 80.0,
         child: TextButton(
           onPressed: () {
+            
             //color:
             currentindex == index ? color : Colors.grey[200];
             //shape:

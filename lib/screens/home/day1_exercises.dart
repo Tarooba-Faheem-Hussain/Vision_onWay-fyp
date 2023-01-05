@@ -1,10 +1,20 @@
+//import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore_for_file: non_constant_identifier_names
+
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:sign_in/screens/home/congratulation.dart';
+
+//import 'package:sign_in/screens/home/congratulation.dart';
+//import 'package:sign_in/screens/home/fday1.dart';
+// import 'package:get/get_state_manager/src/simple/list_notifier.dart';
+// import 'package:sign_in/controllerBindings.dart';
+//import 'package:video_player/video_player.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 // ignore: camel_case_types
 class Day1_Exercises extends StatefulWidget {
   const Day1_Exercises({Key? key}) : super(key: key);
+  
 
   @override
   State<Day1_Exercises> createState() => _Day1_ExercisesState();
@@ -13,13 +23,26 @@ class Day1_Exercises extends StatefulWidget {
 // ignore: camel_case_types
 class _Day1_ExercisesState extends State<Day1_Exercises> {
   late YoutubePlayerController controller;
+  late final dref = FirebaseDatabase.instance.ref();
+  late DatabaseReference databaseReference;
+  setData() {
+    dref.child("progress").set({
+       
+      'title':"Congralutions! you are successfully done your day 1 you are burn 100 calories in 5 mints"
+    });
+  }
 
-  get isFinished => null;
+  showData() {
+    dref.once().then((snapshot) {
+      print(snapshot);
+    });
+  }
 
   @override
   // ignore: must_call_super
   void initState() {
-    // super.initState();
+    super.initState();
+    databaseReference = dref;
 
     const url = 'https://youtu.be/qcVlGnq5B4Y';
 
@@ -72,23 +95,22 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
           body: ListView(
             children: [
               Player,
-              const ExpansionTile(
-                //backgroundColor:Color.fromARGB(255, 202, 190, 204),
-                title: Text('\nDay 1: \n7 Exercises in 5 minutes duration',
-                    style: TextStyle(
-                      height: 0.98,
-                      fontSize: 19.0,
-                    )),
-                textColor: Colors.black,
-                // subtitle: Text('Trailing expansion arrow icon'),
-                children: <Widget>[
-                  ListTile(
-                      title: Text(
-                          ' \nI hope you have learned how to perform each exercise from the cards right on the previous page. \n\nif not, then go back & tab on any exercise to find out the way to perform exercises easily. \n')),
-                ],
-              ),
+              Spacer(),
+              Text('FULL BODY WORKOUT',
+                  style: TextStyle(
+                    height: 1.9,
+                    fontSize: 25.0,
+                    color: Color.fromARGB(255, 149, 76, 161),
+                  )),
+              Text(
+                  'The benefits of a full body workout are huge It is a great way to ensure you are training all muscles group one workout, no muscles left behind.Full body workouts tend to incorporate compound strength exercises, which are a super efficient way of training for functional strength as well as cardiovascular health',
+                  style: TextStyle(
+                    height: 1,
+                    fontSize: 17,
+                    color: Color.fromARGB(255, 178, 99, 192),
+                  )),
               SizedBox(
-                height: 50,
+                height: 40,
               ),
               OutlinedButton(
                 style: OutlinedButton.styleFrom(
@@ -99,12 +121,7 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
                     color: Color.fromARGB(255, 177, 96, 191),
                   ),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Congratulation()),
-                  );
-                },
+                onPressed:setData,
                 child: const Text(
                   'Done!!',
                   style: TextStyle(
@@ -113,8 +130,18 @@ class _Day1_ExercisesState extends State<Day1_Exercises> {
                   ),
                 ),
               )
+  //         ElevatedButton(
+  // onPressed:setData,
+  //               child: const Text(
+  //                 'Done!!',
+  //                 style: TextStyle(
+  //                   fontSize: 34,
+  //                 ),
+  //               ),
+  //             )
             ],
           ),
         ),
       );
+
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sign_in/screens/home/walking_screen.dart';
 import 'package:sign_in/screens/home/workout_screen.dart';
 
+
 class Progress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -98,7 +99,7 @@ class Progress extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => workout()),
+                                      builder: (context) => Workout_screen()),
                                 );
                               }),
                         ],
@@ -112,3 +113,5 @@ class Progress extends StatelessWidget {
         ]));
   }
 }
+
+

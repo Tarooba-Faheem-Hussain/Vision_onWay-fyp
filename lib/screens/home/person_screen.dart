@@ -20,9 +20,11 @@ class Person extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
             'Vision OnWay',
+            
             style: TextStyle(
               color: Color.fromARGB(255, 167, 124, 175),
             ),
@@ -30,6 +32,7 @@ class Person extends StatelessWidget {
           elevation: 0,
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           iconTheme: IconThemeData(
+
             color: Color.fromARGB(255, 167, 124, 175),
           ),
         ),
