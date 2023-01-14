@@ -36,7 +36,7 @@ class _WorkoutState extends State<Fday2> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Text(
-                    '6 Mins, 7 Exercises',
+                    '5 Mins, 7 Exercises',
                     style: TextStyle(
                         height: 2.7, fontSize: 18, color: Colors.purple[300]),
                   ),
