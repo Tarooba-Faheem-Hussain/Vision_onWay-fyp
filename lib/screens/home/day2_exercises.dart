@@ -95,20 +95,21 @@ class _Day2_ExercisesState extends State<Day2_Exercises> {
           body: ListView(
             children: [
               Player,
-              Spacer(),
-              Text('FULL BODY WORKOUT',
-                  style: TextStyle(
-                    height: 1.9,
-                    fontSize: 25.0,
-                    color: Color.fromARGB(255, 149, 76, 161),
-                  )),
-              Text(
-                  'The benefits of a full body workout are huge It is a great way to ensure you are training all muscles group one workout, no muscles left behind.Full body workouts tend to incorporate compound strength exercises, which are a super efficient way of training for functional strength as well as cardiovascular health',
-                  style: TextStyle(
-                    height: 1,
-                    fontSize: 17,
-                    color: Color.fromARGB(255, 178, 99, 192),
-                  )),
+              const ExpansionTile(
+                //backgroundColor:Color.fromARGB(255, 202, 190, 204),
+                title: Text('\nDay 2: \n7 Exercises in 5 minutes duration',
+                    style: TextStyle(
+                      height: 0.98,
+                      fontSize: 19.0,
+                    )),
+                textColor: Colors.black,
+                // subtitle: Text('Trailing expansion arrow icon'),
+                children: <Widget>[
+                  ListTile(
+                      title: Text(
+                          ' \nI hope you have learned how to perform each exercise from the cards right on the previous page. \n\nif not, then go back & tab on any exercise to find out the way to perform exercises easily. \n')),
+                ],
+              ),
               SizedBox(
                 height: 40,
               ),
