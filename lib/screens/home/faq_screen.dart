@@ -12,7 +12,7 @@ class _FAQsState extends State<FAQs> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('FAQ'),
-          backgroundColor: Color.fromARGB(255, 167, 124, 175),
+          backgroundColor: Color.fromARGB(255, 61, 25, 67),
           centerTitle: true,
         ),
         body: Column(children: <Widget>[

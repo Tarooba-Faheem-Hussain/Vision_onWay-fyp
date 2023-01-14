@@ -41,8 +41,8 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         iconSize: 25,
-        selectedItemColor: Color.fromARGB(255, 167, 124, 175),
-        unselectedItemColor: Color.fromARGB(255, 195, 154, 202),
+        selectedItemColor: Color.fromARGB(255, 91, 36,	122),
+        unselectedItemColor: Color.fromARGB(255, 153, 108, 193),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.person),

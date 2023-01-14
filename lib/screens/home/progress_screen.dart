@@ -10,7 +10,7 @@ class Progress extends StatelessWidget {
        
        appBar: AppBar(
           title: const Text('Progress'),
-           backgroundColor:Color.fromARGB(255, 167, 124, 175),
+           backgroundColor:Color.fromARGB(255, 61, 25, 67),
           centerTitle: true,
         ),
         body: Column(children: [
@@ -99,7 +99,7 @@ class Progress extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Workout_screen()),
+                                      builder: (context) => Workout_Screen()),
                                 );
                               }),
                         ],
