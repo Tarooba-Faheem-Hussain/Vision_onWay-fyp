@@ -134,7 +134,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
               Container(
                 width: double.infinity,
                 height: 50.0,
-                child: FlatButton(
+                child: TextButton(
                   onPressed:() {
                     setState(() {
                        height = double.parse(heightController.value.text);
@@ -144,7 +144,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                     calculteBmi(height, weight);
                   //
                   },
-                  color: Colors.blue,
+                  // color: Colors.blue,
                   child: Text("Calculate", style: TextStyle(
                     color: Colors.white,
                ),
@@ -212,15 +212,15 @@ void calculteBmi(double height, double weight){
         margin: EdgeInsets.symmetric(horizontal: 12.0),
        //add some heith to btn
        height: 80.0,
-        child: FlatButton(
-//wanna change button color
-//
-//
-          color: currentindex == index ? color : Colors.grey[200],
-// add round border
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
-          ),
+        child: TextButton(
+          //wanna change button color
+          //
+          //
+          // color: currentindex == index ? color : Colors.grey[200],
+          // add round border
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(8.0),
+          // ),
 
           onPressed: () {
             //

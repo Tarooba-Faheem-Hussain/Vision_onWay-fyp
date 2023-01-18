@@ -87,6 +87,7 @@ class _Workout_ScreenState extends State<Workout_Screen> {
               icon: Icon(Icons.refresh, color: Colors.white),
               onPressed: () {},
               style: TextButton.styleFrom(
+                // ignore: deprecated_member_use
                 primary: Colors.white,
               ),
             ),

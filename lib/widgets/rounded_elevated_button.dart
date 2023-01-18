@@ -23,6 +23,7 @@ class RoundedElevatedButton extends StatelessWidget {
       ),
       style: ElevatedButton.styleFrom(
         padding: padding,
+        // ignore: deprecated_member_use
         primary: kPrimaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),

@@ -99,6 +99,7 @@ class Person extends StatelessWidget {
                     child: ElevatedButton.icon(
                         icon: Icon(Icons.logout),
                         style: ElevatedButton.styleFrom(
+                          // ignore: deprecated_member_use
                           primary: Color.fromARGB(255, 91, 36, 122),
                         ),
                         onPressed: () => _authController.signout(),

@@ -42,6 +42,7 @@ class Progress extends StatelessWidget {
                             
                               style: ElevatedButton.styleFrom(
                                   minimumSize: Size(5, 5),
+                                   // ignore: deprecated_member_use
                                    primary:Color.fromARGB(255, 167, 124, 175)
                                   //onPrimary: Color.fromARGB(255, 167, 124,170)
                                   ),
@@ -88,6 +89,7 @@ class Progress extends StatelessWidget {
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   minimumSize: Size(0, 0),
+                                  // ignore: deprecated_member_use
                                   primary:Color.fromARGB(255, 167, 124, 175)
                                   //onPrimary: Color.fromARGB(255, 167, 124,170)
                                   ),
