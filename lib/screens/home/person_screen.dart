@@ -146,7 +146,7 @@ class Person extends StatelessWidget {
                       width: 105.0,
                       child: Divider(color: Colors.black),
                     ),
-OutlinedButton(
+                    OutlinedButton(
                       style: OutlinedButton.styleFrom(
                         shape: StadiumBorder(),
                         minimumSize: Size(20, 40),
@@ -156,7 +156,7 @@ OutlinedButton(
                         ),
                       ),
                       onPressed: () {
-                       Navigator.push(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => BmiCalculator()));
@@ -169,8 +169,8 @@ OutlinedButton(
                         ),
                       ),
                     ),
-                    
-                      const SizedBox(height: 18),
+
+                    const SizedBox(height: 18),
 
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(

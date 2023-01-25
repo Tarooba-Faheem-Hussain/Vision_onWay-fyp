@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Workout_Screen extends StatefulWidget {
   const Workout_Screen({Key? key}) : super(key: key);
@@ -8,68 +11,100 @@ class Workout_Screen extends StatefulWidget {
 }
 
 class _Workout_ScreenState extends State<Workout_Screen> {
-  var tableDataOne = {
-    "Days": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    "Calories": [
-      100,
-      200,
-      300,
-      400,
-      500,
-      600,
-      700,
-    ],
-    "Time Duration": [
-      10,
-      20,
-      30,
-      40,
-      50,
-      60,
-      70,
-    ],
-  };
-
-  var tableDataTwo = {
-    "Days": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    "Calories": [
-      100,
-      200,
-      300,
-      400,
-      500,
-      600,
-      700,
-    ],
-    "Time Duration": [
-      10,
-      20,
-      30,
-      40,
-      50,
-      60,
-      70,
-    ],
-  };
-
   int _selectedIndex = 0;
   TabController? controller;
+
+  bool? _hasData = true;
+
+  var day = 1;
+
+  var _fbWorkout = FirebaseFirestore.instance
+      .collection('Workout Progress')
+      .doc(FirebaseAuth.instance.currentUser!.uid)
+      .collection('Full Body Workout')
+      .doc("Day 1")
+      .delete();
+
+  var _lgWorkout = FirebaseFirestore.instance
+      .collection('Workout Progress')
+      .doc(FirebaseAuth.instance.currentUser!.uid)
+      .collection('Legs Workout')
+      .doc()
+      .delete();
+
+  Future<void> _deleteFB() async {
+    print("Deleting Data...");
+    print(FirebaseAuth.instance.currentUser!.uid);
+    try {
+      var collection = await FirebaseFirestore.instance
+          .collection('Workout Progress')
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .collection('Full Body Workout')
+          .get();
+      var snapshot = collection.docs;
+      for (var i in snapshot) {
+        await i.reference.delete();
+      }
+
+      Get.snackbar(
+        "Success",
+        "Data Deleted Successfully",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.green,
+        colorText: Colors.white,
+        duration: Duration(seconds: 3),
+      );
+      setState(() {
+        _hasData = false;
+      });
+    } catch (e) {
+      Get.snackbar(
+        "Error",
+        "Something went wrong",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        duration: Duration(seconds: 3),
+      );
+    }
+  }
+
+  Future<void> _deleteLG() async {
+    print("Deleting Data...");
+    print(FirebaseAuth.instance.currentUser!.uid);
+    try {
+      var collection = await FirebaseFirestore.instance
+          .collection('Workout Progress')
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .collection('Legs Workout')
+          .get();
+      var snapshot = collection.docs;
+      for (var i in snapshot) {
+        await i.reference.delete();
+      }
+
+      Get.snackbar(
+        "Success",
+        "Data Deleted Successfully",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.green,
+        colorText: Colors.white,
+        duration: Duration(seconds: 3),
+      );
+      setState(() {
+        _hasData = false;
+      });
+    } catch (e) {
+      Get.snackbar(
+        "Error",
+        "Something went wrong",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        duration: Duration(seconds: 3),
+      );
+    }
+  }
 
   @override
   //State<Workout_screen> createState() => _WorkoutState();
@@ -79,15 +114,17 @@ class _Workout_ScreenState extends State<Workout_Screen> {
       initialIndex: _selectedIndex,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 61, 25, 67),
+          backgroundColor: Color.fromARGB(255, 22, 142, 172),
           title: Text('Workout Progress'),
           actions: [
             TextButton.icon(
               label: Text('Reset'),
               icon: Icon(Icons.refresh, color: Colors.white),
-              onPressed: () {},
+              onPressed: () async {
+                _selectedIndex == 0 ? await _deleteFB() : await _deleteLG();
+              },
               style: TextButton.styleFrom(
-                primary: Colors.white,
+                //foregroundColor: Colors.white,
               ),
             ),
           ],
@@ -125,6 +162,7 @@ class _Workout_ScreenState extends State<Workout_Screen> {
             onTap: (value) {
               setState(() {
                 _selectedIndex = value;
+                print("Selected Index: " + _selectedIndex.toString());
               });
             },
           ),
@@ -133,202 +171,533 @@ class _Workout_ScreenState extends State<Workout_Screen> {
           controller: controller,
           children: [
             // for tableDataOne
-            Container(
-              padding: EdgeInsets.all(10),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    // Text for the table title
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        "Full Body Workout",
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Table(
-                        border: TableBorder.all(),
-                        defaultVerticalAlignment:
-                            TableCellVerticalAlignment.middle,
-                        defaultColumnWidth: FixedColumnWidth(120.0),
-                        columnWidths: {
-                          0: FlexColumnWidth(1),
-                          1: FlexColumnWidth(1),
-                          2: FlexColumnWidth(1),
-                        },
-                        children: [
-                          TableRow(children: [
-                            Text(
-                              "Days",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20),
-                            ),
-                            Text("Calories",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20)),
-                            FittedBox(
-                              child: Text("Time Duration",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20)),
-                            ),
-                          ]),
+            StreamBuilder(
+              stream: FirebaseFirestore.instance
+                  .collection('Workout Progress')
+                  .doc(FirebaseAuth.instance.currentUser!.uid)
+                  .collection('Full Body Workout')
+                  .snapshots(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.hasError) {
+                  return Text("Something went wrong");
+                }
 
-                          // This is where we will loop through the tableData
-                          // and create a TableRow for each row of data
-                          for (var i = 0; i < tableDataOne["Days"]!.length; i++)
-                            TableRow(
-                              children: [
-                                Text(tableDataOne["Days"]![i].toString(),
-                                    style: TextStyle(fontSize: 17)),
-                                Text(tableDataOne["Calories"]![i].toString(),
-                                    style: TextStyle(fontSize: 17)),
-                                Text(
-                                    tableDataOne["Time Duration"]![i]
-                                        .toString(),
-                                    style: TextStyle(fontSize: 17)),
-                              ],
-                            ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Expanded(
-                              flex: 1,
-                              child: Text("Total Progress:",
-                                  style: TextStyle(fontSize: 15))),
-                          Expanded(
-                            flex: 2,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: <Widget>[
-                                Text("2800 calories"),
-                                Text("280 mints"),
-                              ],
+                if (!snapshot.hasData) {
+                  return Center(child: Text("No Data..."));
+                }
+
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+
+                if (snapshot.hasData) {
+                  return Container(
+                    padding: EdgeInsets.all(10),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          // Text for the table title
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              "Full Body Workout",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
+                          _hasData == false
+                              ? Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.black),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    "No Data Available",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.black),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: StreamBuilder(
+                                    stream: FirebaseFirestore.instance
+                                        .collection('Workout Progress')
+                                        .doc(FirebaseAuth
+                                            .instance.currentUser!.uid)
+                                        .collection('Full Body Workout')
+                                        .snapshots(),
+                                    builder: (BuildContext context,
+                                        AsyncSnapshot snapshot) {
+                                      if (snapshot.hasError) {
+                                        return Text("Something went wrong");
+                                      }
+
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                            child: Text("No Data..."));
+                                      }
+
+                                      if (snapshot.connectionState ==
+                                          ConnectionState.waiting) {
+                                        return Center(
+                                          child: CircularProgressIndicator(),
+                                        );
+                                      }
+
+                                      if (snapshot.hasData) {
+                                        final data = snapshot.data;
+                                        List<QueryDocumentSnapshot>
+                                            documentSnapshot = data.docs;
+
+                                        print(documentSnapshot[0]['calories']);
+
+                                        return ListView.builder(
+                                          shrinkWrap: true,
+                                          itemCount: documentSnapshot.length,
+                                          itemBuilder: (context, index) {
+                                            if (index == 0) {
+                                              return Column(
+                                                children: [
+                                                  !_hasData!
+                                                      ? Center(
+                                                          child:
+                                                              Text("No Data"),
+                                                        )
+                                                      : Table(
+                                                          border:
+                                                              TableBorder.all(),
+                                                          defaultVerticalAlignment:
+                                                              TableCellVerticalAlignment
+                                                                  .middle,
+                                                          defaultColumnWidth:
+                                                              FixedColumnWidth(
+                                                                  120.0),
+                                                          columnWidths: {
+                                                            0: FlexColumnWidth(
+                                                                1),
+                                                            1: FlexColumnWidth(
+                                                                1),
+                                                            2: FlexColumnWidth(
+                                                                1),
+                                                          },
+                                                          children: [
+                                                            TableRow(
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                shape: BoxShape
+                                                                    .rectangle,
+                                                                color: Colors
+                                                                    .green
+                                                                    .shade100,
+                                                              ),
+                                                              children: [
+                                                                Text(
+                                                                  "Days",
+                                                                  style: TextStyle(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontSize:
+                                                                          20),
+                                                                ),
+                                                                Text("Calories",
+                                                                    style: TextStyle(
+                                                                        fontWeight:
+                                                                            FontWeight
+                                                                                .bold,
+                                                                        fontSize:
+                                                                            20)),
+                                                                FittedBox(
+                                                                  child: Text(
+                                                                      "Time Duration",
+                                                                      style: TextStyle(
+                                                                          fontWeight: FontWeight
+                                                                              .bold,
+                                                                          fontSize:
+                                                                              20)),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                            for (int i = 0;
+                                                                i <
+                                                                    documentSnapshot
+                                                                        .length;
+                                                                i++)
+                                                              TableRow(
+                                                                children: [
+                                                                  Text(
+                                                                      documentSnapshot[
+                                                                              i]
+                                                                          [
+                                                                          "Day"],
+                                                                      style: TextStyle(
+                                                                          fontSize:
+                                                                              17)),
+                                                                  Text(
+                                                                      documentSnapshot[
+                                                                              i]
+                                                                          [
+                                                                          'calories'],
+                                                                      style: TextStyle(
+                                                                          fontSize:
+                                                                              17)),
+                                                                  Text(
+                                                                      documentSnapshot[
+                                                                              i]
+                                                                          [
+                                                                          'timeDuration'],
+                                                                      style: TextStyle(
+                                                                          fontSize:
+                                                                              17)),
+                                                                ],
+                                                              ),
+                                                            TableRow(
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                shape: BoxShape
+                                                                    .rectangle,
+                                                                color: Colors
+                                                                    .red
+                                                                    .shade100,
+                                                              ),
+                                                              children: [
+                                                                Text(
+                                                                  "Total Progress",
+                                                                  style:
+                                                                      TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        15,
+                                                                    color: Colors
+                                                                        .red,
+                                                                  ),
+                                                                ),
+                                                                Text(
+                                                                  documentSnapshot[documentSnapshot.length -
+                                                                              1]
+                                                                          [
+                                                                          "totalCalories"] ??
+                                                                      "0",
+                                                                  style:
+                                                                      TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        15,
+                                                                    color: Colors
+                                                                        .red,
+                                                                  ),
+                                                                ),
+                                                                Text(
+                                                                  documentSnapshot[documentSnapshot.length -
+                                                                              1]
+                                                                          [
+                                                                          "total time"] ??
+                                                                      "0",
+                                                                  style:
+                                                                      TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        15,
+                                                                    color: Colors
+                                                                        .red,
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ],
+                                                        ),
+                                                ],
+                                              );
+                                            } else {
+                                              return Container(
+                                                child: Center(
+                                                  child: Text("No Data"),
+                                                ),
+                                              );
+                                            }
+                                          },
+                                        );
+                                      }
+                                      return Center(
+                                          child: CircularProgressIndicator());
+                                    },
+                                  ),
+                                ),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
+                  );
+                }
+                return Center(child: CircularProgressIndicator());
+              },
             ),
-            // for tableDataTwo
-            Container(
-              padding: EdgeInsets.all(10),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    // Text for the table title
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        "Legs Workout",
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Table(
-                        border: TableBorder.all(),
-                        defaultVerticalAlignment:
-                            TableCellVerticalAlignment.middle,
-                        defaultColumnWidth: FixedColumnWidth(120.0),
-                        columnWidths: {
-                          0: FlexColumnWidth(1),
-                          1: FlexColumnWidth(1),
-                          2: FlexColumnWidth(1),
-                        },
-                        children: [
-                          TableRow(children: [
-                            Text(
-                              "Days",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20),
-                            ),
-                            Text("Calories",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20)),
-                            FittedBox(
-                              child: Text("Time Duration",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20)),
-                            ),
-                          ]),
 
-                          // This is where we will loop through the tableData
-                          // and create a TableRow for each row of data
-                          for (var i = 0; i < tableDataTwo["Days"]!.length; i++)
-                            TableRow(
-                              children: [
-                                Text(tableDataTwo["Days"]![i].toString(),
-                                    style: TextStyle(fontSize: 17)),
-                                Text(tableDataTwo["Calories"]![i].toString(),
-                                    style: TextStyle(fontSize: 17)),
-                                Text(
-                                    tableDataTwo["Time Duration"]![i]
-                                        .toString(),
-                                    style: TextStyle(fontSize: 17)),
-                              ],
-                            ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Expanded(
-                              flex: 1,
-                              child: Text("Total Progress:",
-                                  style: TextStyle(fontSize: 15))),
-                          Expanded(
-                            flex: 2,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: <Widget>[
-                                Text("2800 calories"),
-                                Text("280 days"),
-                              ],
+            StreamBuilder(
+              stream: FirebaseFirestore.instance
+                  .collection('Workout Progress')
+                  .doc(FirebaseAuth.instance.currentUser!.uid)
+                  .collection('Legs Workout')
+                  .snapshots(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.hasError) {
+                  return Text("Something went wrong");
+                }
+
+                if (!snapshot.hasData) {
+                  return Center(child: Text("No Data..."));
+                }
+
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+
+                if (snapshot.hasData) {
+                  return Container(
+                    padding: EdgeInsets.all(10),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          // Text for the table title
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              "Legs Workout",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
+                          _hasData == false
+                              ? Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.black),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Text(
+                                    "No Data Available",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.black),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: StreamBuilder(
+                                    stream: FirebaseFirestore.instance
+                                        .collection('Workout Progress')
+                                        .doc(FirebaseAuth
+                                            .instance.currentUser!.uid)
+                                        .collection('Legs Workout')
+                                        .snapshots(),
+                                    builder: (BuildContext context,
+                                        AsyncSnapshot snapshot) {
+                                      if (snapshot.hasError) {
+                                        return Text("Something went wrong");
+                                      }
+
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                            child: Text("No Data..."));
+                                      }
+
+                                      if (snapshot.connectionState ==
+                                          ConnectionState.waiting) {
+                                        return Center(
+                                          child: CircularProgressIndicator(),
+                                        );
+                                      }
+
+                                      if (snapshot.hasData) {
+                                        final data = snapshot.data;
+                                        List<QueryDocumentSnapshot>
+                                            documentSnapshot = data.docs;
+
+                                        print(documentSnapshot[0]['calories']);
+
+                                        return ListView.builder(
+                                          shrinkWrap: true,
+                                          itemCount: documentSnapshot.length,
+                                          itemBuilder: (context, index) {
+                                            if (index == 0) {
+                                              return Column(
+                                                children: [
+                                                  Table(
+                                                    border: TableBorder.all(),
+                                                    defaultVerticalAlignment:
+                                                        TableCellVerticalAlignment
+                                                            .middle,
+                                                    defaultColumnWidth:
+                                                        FixedColumnWidth(120.0),
+                                                    columnWidths: {
+                                                      0: FlexColumnWidth(1),
+                                                      1: FlexColumnWidth(1),
+                                                      2: FlexColumnWidth(1),
+                                                    },
+                                                    children: [
+                                                      TableRow(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                          color: Colors
+                                                              .green.shade100,
+                                                        ),
+                                                        children: [
+                                                          Text(
+                                                            "Days",
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                fontSize: 20),
+                                                          ),
+                                                          Text("Calories",
+                                                              style: TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontSize:
+                                                                      20)),
+                                                          FittedBox(
+                                                            child: Text(
+                                                                "Time Duration",
+                                                                style: TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    fontSize:
+                                                                        20)),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      for (int i = 0;
+                                                          i <
+                                                              documentSnapshot
+                                                                  .length;
+                                                          i++)
+                                                        TableRow(
+                                                          children: [
+                                                            Text(
+                                                                documentSnapshot[
+                                                                    i]["Day"],
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        17)),
+                                                            Text(
+                                                                documentSnapshot[
+                                                                        i][
+                                                                    'calories'],
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        17)),
+                                                            Text(
+                                                                documentSnapshot[
+                                                                        i][
+                                                                    'timeDuration'],
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        17)),
+                                                          ],
+                                                        ),
+                                                      TableRow(
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape: BoxShape
+                                                              .rectangle,
+                                                          color: Colors
+                                                              .red.shade100,
+                                                        ),
+                                                        children: [
+                                                          Text(
+                                                            "Total Progress",
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 15,
+                                                              color: Colors.red,
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            documentSnapshot[
+                                                                    documentSnapshot
+                                                                            .length -
+                                                                        1]["totalCalories"] ??
+                                                                "0",
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 15,
+                                                              color: Colors.red,
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            documentSnapshot[
+                                                                    documentSnapshot
+                                                                            .length -
+                                                                        1]["total time"] ??
+                                                                "0",
+                                                            style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 15,
+                                                              color: Colors.red,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              );
+                                            } else {
+                                              return Container(
+                                                width: double.infinity,
+                                              );
+                                            }
+                                          },
+                                        );
+                                      }
+                                      return Center(
+                                          child: CircularProgressIndicator());
+                                    },
+                                  ),
+                                ),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
+                  );
+                }
+                return Center(child: CircularProgressIndicator());
+              },
             ),
           ],
         ),
