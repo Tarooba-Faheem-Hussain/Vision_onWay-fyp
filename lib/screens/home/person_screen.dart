@@ -118,7 +118,7 @@ class Person extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 50.0,
-                      backgroundImage: AssetImage('assets/Profile.jpg'),
+                      backgroundImage: AssetImage('assets/VisionOnway-NewLogo.png'),
                     ),
                     SizedBox(
                       height: 30.0,

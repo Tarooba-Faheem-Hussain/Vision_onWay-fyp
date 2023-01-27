@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sign_in/screens/home/faq_screen.dart';
 //import 'package:sign_in/screens/home/faqs_screen.dart';
 import 'package:sign_in/screens/home/person_screen.dart';
-import 'package:sign_in/screens/home/progress_screen.dart';
+//import 'package:sign_in/screens/home/progress_screen.dart';
+import 'package:sign_in/screens/home/workout_screen.dart';
 //import 'package:get/get_state_manager/src/simple/get_state.dart';
 //import 'package:sign_in/config.dart';
 //import 'package:sign_in/controller/auth_controller.dart';
@@ -22,7 +23,7 @@ class _HomeState extends State<Home> {
   int _SelectedIndex = 0;
   List<Widget> _widgetOptions = <Widget>[
     Person(),
-    Progress(),
+    Workout_Screen(),
     FAQs(),
   ];
 

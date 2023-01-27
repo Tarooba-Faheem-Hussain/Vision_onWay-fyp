@@ -60,7 +60,7 @@ class _WorkoutState extends State<Fday2> {
                                     text: 'Standing bicycle crunches',
                                     children: <TextSpan>[
                                       TextSpan(
-                                        text: '\n\nDuration 00:40 \n\n',
+                                        
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -95,7 +95,12 @@ class _WorkoutState extends State<Fday2> {
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
-                                    child: Text("CLOSE"),
+                                    child: const Text(
+                                      'Close',
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 61, 25, 67),
+                                      ),
+                                    )                                    
                                   ),
                                 ],
                               ),

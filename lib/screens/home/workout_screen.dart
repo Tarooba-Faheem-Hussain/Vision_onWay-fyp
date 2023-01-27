@@ -114,18 +114,21 @@ class _Workout_ScreenState extends State<Workout_Screen> {
       initialIndex: _selectedIndex,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 22, 142, 172),
+          backgroundColor: Color.fromARGB(255, 91, 36, 122),
           title: Text('Workout Progress'),
           actions: [
             TextButton.icon(
-              label: Text('Reset'),
+              label: Text(
+                'Reset',
+                style: TextStyle(color: Colors.white),
+              ),
               icon: Icon(Icons.refresh, color: Colors.white),
               onPressed: () async {
                 _selectedIndex == 0 ? await _deleteFB() : await _deleteLG();
               },
               style: TextButton.styleFrom(
-                //foregroundColor: Colors.white,
-              ),
+                  //foregroundColor: Colors.white,
+                  ),
             ),
           ],
           elevation: 0,
@@ -154,7 +157,7 @@ class _Workout_ScreenState extends State<Workout_Screen> {
             indicatorColor: Color.fromARGB(255, 22, 142, 172),
             indicatorWeight: 5.0,
             unselectedLabelColor: Colors.white,
-            labelColor: Color.fromARGB(255, 22, 142, 172),
+            labelColor: Color.fromARGB(255, 91, 36, 122),
             tabs: [
               Tab(text: "Full Body Workout"),
               Tab(text: "Legs Workout"),
